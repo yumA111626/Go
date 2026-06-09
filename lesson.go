@@ -11,6 +11,7 @@ func bazz() {
 	fmt.Println("bazz")
 }
 
+// github issue の紐付け
 func main() {
 	bazz()
 	fmt.Println("Hello World") // 標準出力には fmt のimport が必要
