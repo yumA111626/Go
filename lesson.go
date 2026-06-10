@@ -1,18 +1,14 @@
 // This is Go Main Func
 package main // これは必ず記載する
 
-import "fmt"
+import (
+	"fmt"
+	"os/user"
+	"time"
+)
 
-func init() {
-	fmt.Println("Init!")
-}
-
-func bazz() {
-	fmt.Println("bazz")
-}
-
-// github issue の紐付け
+// import に関しての講義
 func main() {
-	bazz()
-	fmt.Println("Hello World") // 標準出力には fmt のimport が必要
+	fmt.Println("Hello World", time.Now()) // 標準出力には fmt のimport が必要
+	fmt.Println(user.Current())
 }
