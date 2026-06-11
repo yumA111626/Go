@@ -3,27 +3,19 @@ package main // これは必ず記載する
 
 import "fmt"
 
-// 短変数宣言は関数内でしか実行できない var の通常宣言は可能
-var (
-	i  int     = 20
-	t  bool    = true
-	f  bool    = false
-	s  string  = "Test"
-	fl float64 = 1.01
+const Pi = 3.14
+
+const (
+	USER_NAME = "user_name"
+	PASS_WORD = "Pass_word"
 )
 
-func foo() {
-	xi := 1
-	xs := "test"
-	xf64 := 1.01
-	xt, xf := true, false
+const Int_Max = 9223372036854775807 + 1
 
-	fmt.Println(xi, xs, xf64, xt, xf)
-	fmt.Printf("%T\n", xf64) // 型について出力させる
-}
+// var max int = 9223372036854775807 + 1 // 変数の場合、コンパイラに Intと判断され、コンパイルエラーになる
 
 // 変数宣言 に関しての講義
 func main() {
-	foo() // 関数内では短変数宣言は可能
-	// fmt.Println("標準的な記載の仕方", i, t, f, s, fl)
+	fmt.Println(Pi, USER_NAME, PASS_WORD)
+	fmt.Println(Int_Max - 1) // const の場合はコンパイル時には型の判断がされない
 }
