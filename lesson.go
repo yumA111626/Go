@@ -11,15 +11,12 @@ func main() {
 	var s string = "Test"
 	var fl float64 = 1.01
 
-	// まとめて宣言
-	var (
-		num       int     = 10
-		is_ok     bool    = true
-		is_not_ok bool    = false
-		str_test  string  = "This is Test"
-		fl_num    float64 = 1.02
-	)
+	// 動的型付け宣言
+	xi := 1
+	xs := "test"
+	xf64 := 1.01
+	xt, xf := true, false
 
 	fmt.Println("標準的な記載の仕方", i, t, f, s, fl)
-	fmt.Println("まとめて宣言をした記載の仕方", num, is_ok, is_not_ok, str_test, fl_num)
+	fmt.Println(xi, xs, xf64, xt, xf)
 }
