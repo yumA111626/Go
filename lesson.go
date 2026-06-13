@@ -1,32 +1,32 @@
 // This is Go Main Func
 package main // これは必ず記載する
 
-import "fmt" // 数値型 に関しての講義
+import (
+	"fmt" // TODO: git commit コメントにセクションNoとタイトルを記載すること
+	"strings"
+)
+
+// 文字列型 に関しての講義
 func main() {
-	// Go では長い物に合わせて記載する
-	/*
-		var (
-			u8   uint8   = 221
-			f32  float32 = 1.01
-			int2 int     = 344
-		)
-		fmt.Printf("type=%T , Value=%v\n", u8, u8)
-		fmt.Printf("type=%T , Value=%v\n", f32, f32)
-		fmt.Printf("type=%T , Value=%v\n", int2, int2)
-	*/
-	// いかに計算について記載していく
-	x := 1 + 1
-	fmt.Println(x)
-	fmt.Println(1+1, 2+2)
+	fmt.Println("Hello World")
+	fmt.Println("Hello" + " World")       // 分割して表示
+	fmt.Println("Hello World"[0])         // Python ならスライスで指定して特定の文字を取得可能 (Go の場合 ASCII コード :72)
+	fmt.Println(string("Hello World"[0])) // Stringにキャストすればpython のように取得可能 : H
 
-	x++
-	fmt.Println("x の値を更新する", x)
-	x--
-	fmt.Println("x の値を更新する", x)
+	// リテラルの変更 (特定の文字のみ変更したいなど)
+	var s string = "Hello World"
+	fmt.Println(strings.Replace(s, "H", "X", 1)) // : Xello World 仕組みとしては、sをコピーして変更するため元の値は変更されない
+	fmt.Println(s)
 
-	// シフト演算
-	fmt.Println(1 << 0) // 0001 → 0001
-	fmt.Println(1 << 1) // 0001 → 0010
-	fmt.Println(1 << 2) // 0001 → 0100
-	fmt.Println(1 << 3) // 0001 → 1000
+	// 特定の文字を含んでいるかの判定
+	fmt.Println(strings.Contains(s, "World"))
+
+	// 文字列結合
+	fmt.Println("Hello" +
+		"World")
+
+	// " を表示させたい
+	fmt.Println("\"")
+	fmt.Println(`"`)
+
 }
