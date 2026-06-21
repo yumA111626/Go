@@ -5,15 +5,29 @@ import (
 	"fmt" // 型変換 に関しての講義
 )
 
-// 配列に関しての講義
+// スライスに関しての講義
 func main() {
-	// 配列の初期化
-	var a [2]int
-	a[0] = 100
-	a[1] = 200
-	fmt.Println(a)
+	n := []int{1, 2, 3, 4, 5, 6}
+	fmt.Println(n)
+	fmt.Println(n[2])
+	fmt.Println(n[2:4])
+	fmt.Println(n[2:])
+	fmt.Println(n[:2])
 
-	// 配列に代入する
-	var b [2]int = [2]int{100, 200}
-	fmt.Println(b)
+	// 配列の中身の変更
+	n[2] = 100
+	fmt.Println(n)
+	fmt.Println(n[2])
+
+	// ２次元配列
+	var board = [][]int{
+		[]int{1, 2, 3},
+		[]int{4, 5, 6},
+		[]int{7, 8, 9},
+	}
+	fmt.Println(board)
+
+	// 配列に追加
+	n = append(n, 300)
+	fmt.Println(n)
 }
