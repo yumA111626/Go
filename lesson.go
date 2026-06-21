@@ -3,22 +3,17 @@ package main // これは必ず記載する
 
 import (
 	"fmt" // 型変換 に関しての講義
-	"strconv"
 )
 
+// 配列に関しての講義
 func main() {
-	var x int = 1
-	xx := float64(x)
+	// 配列の初期化
+	var a [2]int
+	a[0] = 100
+	a[1] = 200
+	fmt.Println(a)
 
-	var y float32 = 1.2
-	yy := int(y)
-
-	fmt.Printf("%T , %v , %f\n", xx, xx, xx)
-	fmt.Printf("%T , %v , %d\n", yy, yy, yy)
-
-	// 文字列型の数値を int 型に変換したい(strconv を使用することによって変換可能)
-	var s string = "14"
-	i, _ := strconv.Atoi(s)
-
-	fmt.Printf("%T , %v , %d\n", i, i, i)
+	// 配列に代入する
+	var b [2]int = [2]int{100, 200}
+	fmt.Println(b)
 }
