@@ -5,11 +5,11 @@ import (
 	"fmt" // 型変換 に関しての講義
 )
 
-func add() {
-	fmt.Println("add function")
+func add(x int, y int) {
+	fmt.Println(x + y)
 }
 
 // 関数に関しての講義
 func main() {
-	add()
+	add(10, 20)
 }
