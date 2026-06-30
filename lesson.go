@@ -23,27 +23,15 @@ func cal(price, item int) (result int) {
 	return result // 変数で返り値を宣言しているため return のみでも良い
 }
 
-// 関数に関しての講義
+// クロージャーに関しての講義
 func main() {
-	r := add(10, 20)
-	r1, r2 := add_2(20, 10) // 返り値が複数存在する
-	fmt.Println(r)
-	fmt.Println(r1, r2)
-
-	r4 := cal(1000, 2)
-	fmt.Println(r4)
-
-	// 関数内で関数の宣言
-	f := func() {
-		fmt.Println("Inner func")
+	x := 0
+	// インナー関数を記載
+	increment := func() int {
+		x++
+		return x
 	}
-	f()
-
-	func() {
-		fmt.Println("Inner func2")
-	}()
-
-	func(x int) {
-		fmt.Println("Inner func2", x)
-	}(1)
+	fmt.Println(increment())
+	fmt.Println(increment())
+	fmt.Println(increment())
 }
