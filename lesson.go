@@ -18,4 +18,7 @@ func foo(params ...int) {
 func main() {
 	foo(10, 20)
 	foo(10, 20, 30)
+	// 配列を関数に渡す
+	s := []int{1, 2, 3}
+	foo(s...)
 }
