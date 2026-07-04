@@ -1,32 +1,24 @@
 // This is Go Main Func
 package main // これは必ず記載する
 
-import "fmt" // 数値型 に関しての講義
+import "fmt" // 型変換 に関しての講義
+
+/*
+可変長の引数を渡せる関数を作成する場合は、...をつける
+*/
+func foo(params ...int) {
+	fmt.Println(len(params), params)
+	// ループで引数の中身を取り出す
+	for _, param := range params {
+		fmt.Println(param)
+	}
+}
+
+// 可変長引数に関しての講義
 func main() {
-	// Go では長い物に合わせて記載する
-	/*
-		var (
-			u8   uint8   = 221
-			f32  float32 = 1.01
-			int2 int     = 344
-		)
-		fmt.Printf("type=%T , Value=%v\n", u8, u8)
-		fmt.Printf("type=%T , Value=%v\n", f32, f32)
-		fmt.Printf("type=%T , Value=%v\n", int2, int2)
-	*/
-	// いかに計算について記載していく
-	x := 1 + 1
-	fmt.Println(x)
-	fmt.Println(1+1, 2+2)
-
-	x++
-	fmt.Println("x の値を更新する", x)
-	x--
-	fmt.Println("x の値を更新する", x)
-
-	// シフト演算
-	fmt.Println(1 << 0) // 0001 → 0001
-	fmt.Println(1 << 1) // 0001 → 0010
-	fmt.Println(1 << 2) // 0001 → 0100
-	fmt.Println(1 << 3) // 0001 → 1000
+	foo(10, 20)
+	foo(10, 20, 30)
+	// 配列を関数に渡す
+	s := []int{1, 2, 3}
+	foo(s...)
 }
