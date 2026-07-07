@@ -14,6 +14,11 @@ func main() {
 			fmt.Println("Break")
 			break
 		}
-		fmt.Println(i)
+	}
+	// 他のfor 文の記載の仕方
+	sum := 1
+	for sum < 10 {
+		sum += sum
+		fmt.Println(sum)
 	}
 }
