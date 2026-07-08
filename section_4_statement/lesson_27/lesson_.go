@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 func getOsName() string {
 	return "mac"
@@ -39,4 +42,16 @@ func main() {
 	default: // 条件で一致しない場合
 		fmt.Println("default")
 	}
+
+	// switch の冒頭に条件を記載しない記載の仕方
+	now := time.Now()
+	switch {
+	case now.Hour() < 12:
+		fmt.Println("Morning")
+	case now.Hour() < 17:
+		fmt.Println("Afternoon")
+	default:
+		fmt.Println("else")
+	}
+
 }
