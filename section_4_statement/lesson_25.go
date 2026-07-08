@@ -21,8 +21,8 @@ func main() {
 		sum += sum
 		fmt.Println(sum)
 	}
-	// 作為的に無限ループ生成する
-	for {
-		fmt.Println("Hello")
-	}
+	// // 作為的に無限ループ生成する
+	// for {
+	// 	fmt.Println("Hello")
+	// }
 }
