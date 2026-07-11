@@ -30,6 +30,6 @@ func main() {
 	// log.Println("Info!")
 	// log.Printf("%T , %v", "Test", "Test")
 	// log.Fatalln("Error!!") // fatal は実行後にプログラムが終了してしまう
-	loggingSettings("test.log")
+	loggingSettings("./section_4_statement/lesson_29/test.log")
 	read_file()
 }
