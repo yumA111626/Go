@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+)
 
 /*
 	defer に関して記載
@@ -26,10 +29,21 @@ func stacking_defer() {
 
 }
 
+// defer の使用例
+func read_file() {
+	file, _ := os.Open("/Users/yuma/Go_learn/section_4_statement/lesson_28/lesson_.go") // ファイルを開く
+	defer file.Close()                                                                  // 関数実行後にファイルを閉じ忘れを防止できる
+
+	data := make([]byte, 100)
+	file.Read(data)
+	fmt.Println(string(data))
+}
+
 func main() {
 	// foo()
 
 	// defer fmt.Println("world")
 	// fmt.Println("Hello")
-	stacking_defer()
+	// stacking_defer()
+	read_file()
 }
