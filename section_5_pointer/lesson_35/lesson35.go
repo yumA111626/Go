@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func nil_pointer() {
 	// 通常
@@ -9,6 +11,24 @@ func nil_pointer() {
 	// ここでインクリメントする -> nil pointer に対して値を追加できない
 	*n++
 	fmt.Println(n)
+}
+
+// make とnew の違いについて
+func diff_make_new() {
+	// make
+	s := make([]int, 0)
+	fmt.Println(s)
+
+	m := make(map[string]int)
+	fmt.Println(m)
+
+	// 構造体
+	var st = new(struct{})
+	fmt.Printf("%T\n", st)
+
+	// チャネル
+	var ch = new(chan int)
+	fmt.Printf("%T\n", ch)
 }
 
 // new , make の違いについて
@@ -23,5 +43,6 @@ func main() {
 	var n_2 *int = new(int)
 	fmt.Println(n_2)
 
-	nil_pointer()
+	// nil_pointer()
+	diff_make_new()
 }
