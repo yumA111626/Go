@@ -20,4 +20,16 @@ func main() {
 
 	v3 := Vertex{1, 4, "Test"} // member指定して値を渡さない
 	fmt.Println(v3)
+
+	var v4 Vertex // typedef みたいな記載の仕方
+	fmt.Println(v4)
+	v4.X = 1
+	fmt.Println(v4)
+
+	// 構造体pointer
+	v5 := new(Vertex)
+	fmt.Println(v5)
+
+	v6 := &Vertex{}
+	fmt.Println(v6)
 }
