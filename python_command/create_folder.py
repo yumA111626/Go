@@ -32,4 +32,4 @@ if __name__ == "__main__":
     target_dir = input("作成対象のフォルダ名を入力してください:")
     full_path = Path.cwd()/target_dir
     print(full_path)
-    create_GOfile(start_No=34 , end_No=37 ,dir=full_path)
+    create_GOfile(start_No=39 , end_No=47 ,dir=full_path)
